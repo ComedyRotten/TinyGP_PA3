@@ -38,10 +38,10 @@ public class tiny_gp {
   static long seed;
   static double avg_len; 
   static final int  
-    MAX_LEN = 10000,  
-    POPSIZE = 1000000,
-    DEPTH   = 3,
-    GENERATIONS = 100,
+    MAX_LEN = 25,  
+    POPSIZE = 10000,
+    DEPTH   = 6,
+    GENERATIONS = 500,
     TSIZE = 2;
   public static final double  
     PMUT_PER_NODE  = 0.05,
@@ -372,6 +372,7 @@ public class tiny_gp {
         for ( gen = 1; gen < GENERATIONS; gen ++ ) {
           if (  fbestpop == 0 ) {
               System.out.print("PROBLEM SOLVED\n");
+              
               System.exit( 0 );
           }
           for ( indivs = 0; indivs < POPSIZE; indivs ++ ) 
@@ -396,7 +397,7 @@ public class tiny_gp {
     }
 
     public static void main(String[] args) {
-        String fname = "myproblem.txt";
+        String fname = "prob10.txt";
         long s = -1;
 
         if ( args.length == 2 ) {
